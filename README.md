@@ -28,3 +28,16 @@ run `mkdir helm-web-app`
 ## Step 3: Create a new helm chart
 
 `helm create webapp`
+
+
+https://github.com/kelomo2502/helm-web-app/blob/main/README.md
+
+The project has been hands-on and has depended on my introductory understanding of the Helm chart. I haven't faced any serious serious challenge so far as the learning experience has been enjoyable. I am looking forward to more challenging tasks in the future. 
+
+resources:
+  requests:
+    memory: "128Mi"
+    cpu: "100m"
+  limits:
+    memory: "256Mi"
+    cpu: "200m"
