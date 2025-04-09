@@ -29,11 +29,25 @@ run `mkdir helm-web-app`
 
 `helm create webapp`
 
+<https://github.com/kelomo2502/helm-web-app/blob/main/README.md>
 
-https://github.com/kelomo2502/helm-web-app/blob/main/README.md
+The project has been hands-on and has depended on my introductory understanding of the Helm chart. I haven't faced any serious serious challenge so far as the learning experience has been enjoyable. I am looking forward to more challenging tasks in the future.
 
-The project has been hands-on and has depended on my introductory understanding of the Helm chart. I haven't faced any serious serious challenge so far as the learning experience has been enjoyable. I am looking forward to more challenging tasks in the future. 
+## Modify values.yaml
 
+```yaml
+replicaCount: 2
+
+image:
+  repository: nginx
+  tag: stable
+  pullPolicy: IfNotPresent
+
+```
+
+## Modify deplloyment.yaml
+
+```yaml
 resources:
   requests:
     memory: "128Mi"
@@ -41,3 +55,26 @@ resources:
   limits:
     memory: "256Mi"
     cpu: "200m"
+
+```
+
+## Commit and push changes
+
+```yaml
+git add .
+git commit -m "Customized Helm chart"
+git push
+
+```
+
+## Deploy the application
+
+`helm upgrade --install mywebapp ./webapp`
+
+## Get the deployments
+
+`kubectl get -n default deployments`
+
+## Access the app via the browser by port-forwarding
+
+`kubectl port-forward <pods name> 8080:80`

@@ -60,6 +60,8 @@ spec:
             limits:
               memory: "256Mi"
               cpu: "200m"
+            {{- toYaml . | nindent 12 }}
+          {{- end }}
           {{- with .Values.volumeMounts }}
           volumeMounts:
             {{- toYaml . | nindent 12 }}
